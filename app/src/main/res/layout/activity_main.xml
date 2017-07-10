@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dourk.mathgamechapter2.MainActivity">
+    tools:context="com.dourk.mathgamechapter2.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <RelativeLayout
         android:layout_width="368dp"
         android:layout_height="495dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/button1"
@@ -59,7 +63,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="54dp"
             android:gravity="center_horizontal"
-            android:text="My Math Game" />
+            android:text="My Math Game"
+            android:textSize="36sp" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
