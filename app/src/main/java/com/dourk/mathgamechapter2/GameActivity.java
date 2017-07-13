@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.Random;
+
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
 
     int correctAnswer;
@@ -23,8 +25,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_game);
 
         // Init all the vars
-        int partA = 9;
-        int partB = 9;
+        Random randInt = new Random();
+
+        int partA = randInt.nextInt(10);
+        partA++;
+        int partB = randInt.nextInt(20);
+        partB++;
+
         correctAnswer = partA * partB;
         int wrongAnswer1 = correctAnswer - 1;
         int wrongAnswer2 = correctAnswer + 1;
@@ -48,7 +55,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         textObjectPartA.setText("" + partA);
         textObjectPartB.setText("" + partB);
 
-        // which button is abitrary now...
+        // which button is arbitrary now...
 
         buttonObjectChoice1.setText("" + wrongAnswer1);
         buttonObjectChoice2.setText("" + correctAnswer);
@@ -67,7 +74,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId()) {
             case R.id.buttonChoice1:
-                // init a new int witht ht evalue contained in buttonObjectChoice1
+                // init a new int with the value contained in buttonObjectChoice1
                 // remember we put it there ourselves previously
                 answerGiven = Integer.parseInt("" + buttonObjectChoice1.getText());
 
